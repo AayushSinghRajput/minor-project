@@ -13,7 +13,9 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:5000"}})  # Allow requests from Express server
 
 # Load the trained model
-MODEL_PATH = "./models/skin_type_model.h5"
+# MODEL_PATH = "./models/skin_type_model.h5"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "skin_type_model.h5")
 model = load_model(MODEL_PATH)
 
 # Define class names
