@@ -1,0 +1,77 @@
+/* Team.css */
+.team-container {
+    margin: 5rem 5rem 5rem 15rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.team-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+}
+
+.team-cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 260px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 1rem;
+}
+
+.team-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    width: 100%;
+}
+
+.team-info p {
+    font-size: 0.9rem;
+}
+
+.memeber-role {
+    color: rgba(255, 0, 0, 0.674);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.back-button {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    left: 1000px;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: blue;
+}

@@ -1,0 +1,330 @@
+/* .sign-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+
+.sign-left-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/public/assets/login-background.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+
+
+.left-content {
+    position: absolute;
+    background-color: var(--bg-color) !important;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+}
+
+.left-content h2 {
+    color: var(--text-color) !important;
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.left-content p {
+    color: var(--text-color) !important;
+    font-size: 12px !important;
+    font-weight: lighter;
+}
+
+
+.sign-right-container {
+    flex: 1;
+    background-color: var(--bg-color) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 5;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.right-header span {
+    font-size: 18px !important;
+    color: var(--text-color) !important;
+    font-weight: bold;
+}
+
+
+.signup-form {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--bg-color) !important;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-control::placeholder {
+    color: #aaa;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+}
+
+.forget-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 !important;
+}
+
+.forget-para {
+    font-size: 13px;
+    font-weight: lighter;
+    color: var(--text-color) !important;
+    margin-top: 16px !important;
+}
+
+.forget-sign {
+    text-decoration: none !important;
+}
+
+.forgot-password {
+    display: block;
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none !important;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+} */
+
+/* Ashmita css  */
+
+.sign-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+/* Left Container */
+.sign-left-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/public/assets/login-background.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.left-content {
+    position: absolute;
+    background-color: var(--bg-color) !important;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+}
+
+.left-content h2 {
+    color: var(--text-color) !important;
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.left-content p {
+    color: var(--text-color) !important;
+    font-size: 12px !important;
+    font-weight: lighter;
+}
+
+/* Right Container */
+.sign-right-container {
+    flex: 1;
+    background-color: var(--bg-color) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 5;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.right-header span {
+    font-family: "Gilroy-ExtraBold ";
+    font-size: 18px !important;
+    color: purple !important;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+/* Form Styling */
+.signup-form {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--bg-color) !important;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-group input {
+    outline: none !important;
+    background: transparent;
+    box-shadow: none !important;
+}
+
+.form-check input:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-control::placeholder {
+    color: #aaa;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+}
+
+.forget-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 !important;
+}
+
+.forget-para {
+    font-size: 13px;
+    font-weight: lighter;
+    color: var(--text-color) !important;
+    margin-top: 16px !important;
+}
+
+.forget-sign {
+    text-decoration: none !important;
+}
+
+.forgot-password {
+    display: block;
+    font-size: 0.9rem;
+    color: rgb(5, 173, 173);
+    text-decoration: none !important;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgb(2, 163, 163);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: rgb(2, 85, 85);
+}

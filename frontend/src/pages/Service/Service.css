@@ -1,0 +1,517 @@
+/* .service-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: var(--bg-color);
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: auto;
+}
+
+.image-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--placeholder-bg-color);
+    margin-bottom: 1rem;
+}
+
+.uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.image-container p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.camera-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-feed {
+    width: 100%;
+    height: auto;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.control-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: skyblue;
+    color: white;
+}
+
+.upload-input:hover {
+    background-color: blue;
+}
+
+.capture-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.capture-button:hover {
+    background-color: blue;
+}
+
+.action-button {
+    padding: 0.75rem 1.5rem;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 300px;
+}
+
+.action-button:hover {
+    background-color: blue;
+}
+
+.result {
+    margin-top: 0px;
+    padding: 15px;
+    background-color: var(--bg-color);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.result p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.result p:first-of-type {
+    font-size: 20px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.result p:nth-of-type(2) {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.service-products-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.service-products-container h4 {
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.service-products-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.service-product-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-product-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-product-image {
+    max-width: 50%;
+    height: 180px;
+    perspective: 1000px;
+    background-color: var(--bg-color);
+    transition: transform 0.5s ease, box-shoadow 0.5s ease;
+    transform: translateZ(0);
+    border: 1px solid #33333377;
+    border-radius: 20px;
+}
+
+.service-product-image:hover {
+    border: 1px solid #ccc;
+    transform: translateZ(50px) scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-product-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.service-product-card h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.service-product-card p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+.service-product-card strong {
+    font-weight: bold;
+}
+
+.service-product-card-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: auto;
+}
+
+.service-product-card-buttons button {
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid #33333377;
+    border-radius: 7px;
+    flex: 1;
+} */
+
+/* Ashmita css  */
+.service-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: var(--bg-color);
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: auto;
+}
+
+.image-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px dashed var(--border-color); */
+    border: 1px solid teal;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--placeholder-bg-color);
+    margin-bottom: 1rem;
+}
+
+.uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.image-container p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.camera-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-feed {
+    width: 100%;
+    height: auto;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.control-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls button {
+    background-color: teal;
+}
+
+.controls input {
+    background: teal;
+}
+
+.upload-input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: skyblue;
+    color: white;
+}
+
+.upload-input:hover {
+    background-color: blue;
+}
+
+.capture-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.capture-button:hover {
+    background-color: blue;
+}
+
+.action-button {
+    padding: 0.75rem 1.5rem;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 300px;
+}
+
+.action-button:hover {
+    background-color: blue;
+}
+
+.result {
+    margin-top: 0px;
+    padding: 15px;
+    background-color: var(--bg-color);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.result p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.result p:first-of-type {
+    font-size: 20px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.result p:nth-of-type(2) {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.service-products-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.service-products-container h4 {
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.service-products-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.service-product-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-product-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-product-image {
+    max-width: 50%;
+    height: 180px;
+    perspective: 1000px;
+    background-color: var(--bg-color);
+    transition: transform 0.5s ease, box-shoadow 0.5s ease;
+    transform: translateZ(0);
+    border: 1px solid #33333377;
+    border-radius: 20px;
+}
+
+.service-product-image:hover {
+    border: 1px solid #ccc;
+    transform: translateZ(50px) scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-product-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.service-product-card h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+
+.service-product-card p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+.service-product-card strong {
+    font-weight: bold;
+}
+
+.service-product-card-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: auto;
+}
+
+.service-product-card-buttons button {
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid #33333377;
+    border-radius: 7px;
+    flex: 1;
+}

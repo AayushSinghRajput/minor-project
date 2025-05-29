@@ -1,0 +1,46 @@
+.failure-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.failure-container {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.failure-icon {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+.failure-actions {
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+    color: white;
+}
+
+.failure-container .btn-primary {
+    background-color: #dc3545;
+}

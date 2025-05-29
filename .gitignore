@@ -1,0 +1,16 @@
+.vercel
+
+# Ignore environment variables
+.env
+
+# Ignore node_modules directory
+node_modules/
+# Ignore virtual environments and dependencies
+backend/myenv/
+
+
+# Ignore large binary files
+*.pyd
+*.dll
+*.so
+*.h5

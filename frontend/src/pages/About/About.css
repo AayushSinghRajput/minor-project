@@ -1,0 +1,118 @@
+.about-page {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.about-header {
+    margin-bottom: 25px;
+}
+
+.about-header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: -12px;
+    color: var(--primary-color);
+}
+
+.about-header p {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: var(--text-color) !important;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.about-section-one {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-section-one p {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: var(--text-color) !important;
+}
+
+.about-section-two {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-section-two p {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: var(--text-color) !important;
+}
+
+.about-section-three {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-section-three p {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: var(--text-color) !important;
+}
+
+.about-section-four {
+    background-color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-section-four p {
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: var(--text-color) !important;
+}
+
+
+
+
+
+.about-section h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 13px;
+    font-weight: lighter;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.about-section li {
+    font-weight: lighter;
+    font-size: 13px;
+}
+
+.about-section strong {
+    font-size: 13px;
+    font-weight: bold;
+}

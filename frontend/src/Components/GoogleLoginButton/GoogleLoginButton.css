@@ -1,0 +1,20 @@
+.google-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    /* background-color: #007bff; */
+    /* background-color: teal; */
+    background-color: rgb(2, 163, 163);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px
+}
+
+.google-button:hover {
+    /* background-color: #0056b3; */
+    background-color: rgb(2, 85, 85);
+}
