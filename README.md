@@ -1,6 +1,6 @@
 # 🌟 SkinAlyzer: An AI Facial Analysis and Skincare Advisor
 
-SkinAlyzer is an intelligent skincare advisory system that leverages AI and deep learning to classify your skin type from a facial image and recommend cosmetic products accordingly. Users can either capture a live photo using their camera or upload an image from their device.
+**SkinAlyzer** is an intelligent skincare advisory system that leverages AI and deep learning to classify your skin type from a facial image and recommend cosmetic products accordingly. Users can either capture a live photo using their camera or upload an image from their local device.
 
 ---
 
@@ -12,83 +12,111 @@ SkinAlyzer is an intelligent skincare advisory system that leverages AI and deep
   - **Dry**
   - **Normal**
   - **Acne-Prone**
-- 🧴 Provides skincare product recommendations based on your skin type
-- 🧬 AI-driven classification using CNN with MobileNet architecture
-- 🧑‍💻 User-friendly interface with smooth interactions
+- 🧴 Recommends general skincare products based on skin type
+- 🧬 Uses CNN with MobileNet for skin type classification
+- 💻 Clean and user-friendly interface
 
 ---
 
 ## ⚙️ Tech Stack
 
 ### 🖥️ Frontend
-- **React.js**
-- **Tailwind CSS**
+- [React.js](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ### 🌐 Backend
-- **Node.js**
-- **Express.js**
-- **MongoDB** (for storing analysis history or user data if required)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
 
 ### 🧪 AI Service
-- **Flask** (Python)
-- **CNN** using **MobileNet**
-- **OpenCV** or similar tools for image preprocessing
+- [Flask (Python)](https://flask.palletsprojects.com/)
+- [CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network) using **MobileNet**
+- [OpenCV](https://opencv.org/) for image preprocessing
 
+---
+
+## 🗂️ Project Folder Structure
+
+minor-project/
+├── frontend/ # React + Tailwind CSS for UI
+├── backend/ # Node.js + Express for API
+└── flask-service/ # Flask app for AI-based image classification
+
+
+
+---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### ✅ Prerequisites
+
 - Node.js
 - Python 3.8+
-- MongoDB (Local or Atlas)
+- MongoDB (local or cloud)
 - pip / virtualenv
 
 ---
 
- Project Setup
+### 🔧 Setup Instructions
+
+#### 1️⃣ Frontend Setup
 
 ```bash
-
-1️⃣ Frontend Setup
 cd minor-project/frontend
 npm install
 npm run dev
+
+
 2️⃣ Backend Setup (Node + Express)
-bash
 cd ../backend
 npm install
 node server.js
-3️⃣ AI Flask Service Setup
-bash
-Copy
-Edit
+
+3️⃣ Flask AI Service Setup
 cd ../flask-service
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate        # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
+
+
 🧪 How It Works
 Image Upload: User uploads or captures an image using the web interface.
 
-API Call: The frontend sends the image to the Flask service via the Express backend.
+API Call: The frontend sends the image to the Flask service through the Node/Express backend.
 
 AI Analysis: Flask service processes the image and classifies the skin type using the trained CNN MobileNet model.
 
-Product Recommendation: Based on the classification, the system suggests general skincare products suitable for the user’s skin type.
+Product Recommendation: Based on the result, the system suggests appropriate skincare products for the user.
+
+
+🌐 Test It Live on Hugging Face
+🔗 Try the model on Hugging Face →
 
 💡 Future Enhancements
- Profile management
+👤 User profile management
 
-Advanced analysis (e.g., pore detection, dark spots)
+🔬 Advanced skin analysis (e.g., pore detection, dark spots)
 
-Integration with e-commerce APIs for product purchase
+🛍️ E-commerce API integration for real product suggestions
 
-Personalized routines based on weather/location
+🌦️ Personalized routines based on weather and location
 
 🤝 Contributing
-Contributions are welcome! Feel free to fork this repository, raise issues, or submit PRs to help improve the project.
+We welcome contributions! If you'd like to improve this project, feel free to:
+
+Fork the repo
+
+Raise issues
+
+Submit pull requests
 
 📬 Contact
-Aayush Singh Rajput
-Dharan, Nepal
-Feel free to connect on LinkedIn or reach out via email
+Project Members:
+
+Name	Email
+Aayush Kumar Singh	078bct003@ioepc.edu.np
+Ashmita Karki	078bct017@ioepc.edu.np
+Bhanu Prasad Chaudhary	078bct021@ioepc.edu.np
+Bishal Sharma	078bct027@ioepc.edu.np
