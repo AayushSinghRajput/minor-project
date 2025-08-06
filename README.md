@@ -45,9 +45,11 @@ SkinAlyzer is an intelligent skincare advisory system that leverages AI and deep
 
 ---
 
- 1️⃣ Frontend Setup
+ Project Setup
 
 ```bash
+
+1️⃣ Frontend Setup
 cd minor-project/frontend
 npm install
 npm run dev
