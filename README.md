@@ -91,8 +91,10 @@ AI Analysis: Flask service processes the image and classifies the skin type usin
 Product Recommendation: Based on the result, the system suggests appropriate skincare products for the user.
 
 
-🌐 Test It Live on Hugging Face
-🔗 Try the model on Hugging Face →
+### 🌐 Test It Live on Hugging Face
+
+**🔗 [Try the model on Hugging Face →](https://huggingface.co/spaces/biswa000/minor_project_facial_analysis)**
+
 
 💡 Future Enhancements
 👤 User profile management
