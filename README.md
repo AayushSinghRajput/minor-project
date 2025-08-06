@@ -34,37 +34,6 @@ SkinAlyzer is an intelligent skincare advisory system that leverages AI and deep
 - **CNN** using **MobileNet**
 - **OpenCV** or similar tools for image preprocessing
 
----
-
-## 🗂️ Folder Structure
-
-minor-project/
-│
-├── frontend/ # React + Tailwind UI
-│ ├── public/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ └── App.jsx
-│ └── tailwind.config.js
-│
-├── backend/ # Node.js + Express API
-│ ├── controllers/
-│ ├── routes/
-│ ├── models/
-│ └── server.js
-│
-└── flask-service/ # AI Model (CNN with MobileNet)
-├── model/
-├── app.py
-├── skin_classifier.py
-└── requirements.txt
-
-yaml
-Copy
-Edit
-
----
 
 ## 🚀 Getting Started
 
