@@ -13,4 +13,4 @@ backend/myenv/
 *.pyd
 *.dll
 *.so
-*.h5
+# *.h5
