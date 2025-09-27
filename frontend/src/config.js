@@ -7,7 +7,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const config = {
   // Backend API URL
   apiUrl: isProduction 
-    ? process.env.REACT_APP_API_URL || 'https://your-backend.onrender.com'
+    ? process.env.REACT_APP_API_URL || 'https://minor-project-backend-i814.onrender.com'
     : 'http://localhost:5000',
   
   // Any other environment-specific configurations
