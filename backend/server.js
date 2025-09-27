@@ -22,7 +22,7 @@ dotenv.config();
 // Set environment-specific variables
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const FRONTEND_URL = NODE_ENV === 'production' 
-  ? process.env.FRONTEND_URL || 'https://your-frontend.vercel.app'
+  ? process.env.FRONTEND_URL || 'https://minor-project-frontend-murex.vercel.app'
   : 'http://localhost:3000';
 const FLASK_URL = NODE_ENV === 'production'
   ? process.env.FLASK_URL || 'https://minor-project-ml.onrender.com'
