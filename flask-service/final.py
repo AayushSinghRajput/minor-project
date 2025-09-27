@@ -8,9 +8,20 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
 
+# Get environment variables
+NODE_ENV = os.environ.get('NODE_ENV', 'development')
+BACKEND_URL = os.environ.get('BACKEND_URL', 'http://localhost:5000')
+
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:5000"}})  # Allow requests from Express server
+
+# Configure CORS based on environment
+if NODE_ENV == 'development':
+    # In development, allow requests from localhost backend
+    CORS(app, resources={r"/*": {"origins": BACKEND_URL}})
+else:
+    # In production, allow requests from deployed backend
+    CORS(app, resources={r"/*": {"origins": BACKEND_URL}})
 
 # Load the trained model
 # MODEL_PATH = "./models/skin_type_model.h5"
@@ -190,5 +201,8 @@ def predict_camera():
 
 # Run the Flask server
 if __name__ == '__main__':
-    port =int(os.environ.get('PORT',8000))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    # Get port from environment variable
+    port = int(os.environ.get('PORT', 8000))
+    # In production, debug should be False
+    debug_mode = NODE_ENV == 'development'
+    app.run(host="0.0.0.0", port=port, debug=debug_mode)

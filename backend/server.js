@@ -16,11 +16,23 @@ const { contactRouter } = require("./routes/contact-route");
 const { googleRouter } = require("./routes/google-route");
 const { resetRouter } = require("./routes/reset-route");
 
+// Load environment variables
 dotenv.config();
 
+// Set environment-specific variables
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const FRONTEND_URL = NODE_ENV === 'production' 
+  ? process.env.FRONTEND_URL || 'https://your-frontend.vercel.app'
+  : 'http://localhost:3000';
+const FLASK_URL = NODE_ENV === 'production'
+  ? process.env.FLASK_URL || 'https://minor-project-ml.onrender.com'
+  : 'http://localhost:8000';
+
+// Configure CORS to allow requests from the frontend
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: FRONTEND_URL,
+    credentials: true
   })
 );
 //Connect to the database

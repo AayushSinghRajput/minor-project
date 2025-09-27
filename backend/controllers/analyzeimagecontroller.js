@@ -1,5 +1,8 @@
 const axios = require("axios");
 
+// Get Flask service URL from environment variables
+const FLASK_URL = process.env.FLASK_URL || 'http://localhost:8000';
+
 const analyzeController = async (req, res) => {
   try {
     if (!req.file || !req.file.image) {
@@ -13,7 +16,7 @@ const analyzeController = async (req, res) => {
     // const fileType = req.body.fileType; //optional
 
     // Send base64-encoded image to the ML model
-    const response = await axios.post("http://localhost:8000/predict", {
+    const response = await axios.post(`${FLASK_URL}/predict`, {
       image: base64Image,
       // fileType: fileType, //send file type if required by the ml model
     });

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Sign.css";
 import GoogleLoginButton from "../../Components/GoogleLoginButton/GoogleLoginButton";
-import axios from "axios";
+import apiService from "../../apiService";
 import { useNavigate } from "react-router-dom";
 
 const Sign = () => {
@@ -32,22 +32,12 @@ const Sign = () => {
   const handleSign = async (e) => {
     e.preventDefault();
     const { name, email, password } = formData;
-    console.log("FormData:", formData);
     try {
-      const response = await axios.post(
-        "http://localhost:5000/sign",
-        {
-          name,
-          email,
-          password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log("Backend Response:", response.data);
+      const response = await apiService.signup({
+        name,
+        email,
+        password
+      });
       alert(response.data.message);
       localStorage.setItem("token", response.data.token);
       navigate("/service");
@@ -65,15 +55,10 @@ const Sign = () => {
     e.preventDefault();
     const { email, newPassword } = resetData;
     try {
-      const response = await axios.post(
-        "http://localhost:5000/reset-password",
-        { email, newPassword },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await apiService.resetPassword({
+        email, 
+        newPassword
+      });
       alert(response.data.message);
       setShowResetModal(false);
     } catch (error) {

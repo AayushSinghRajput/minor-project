@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
-import axios from "axios";
+import apiService from "../../apiService";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,10 +16,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/contact",
-        formData
-      );
+      const response = await apiService.contact(formData);
       setResponseMessage(response.data.message);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {

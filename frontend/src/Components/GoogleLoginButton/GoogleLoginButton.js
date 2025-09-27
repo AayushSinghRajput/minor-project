@@ -1,32 +1,18 @@
 import React from "react";
 import { useGoogleLogin } from "@react-oauth/google";
-import axios from "axios";
 import "./GoogleLoginButton.css";
+import apiService from "../../apiService";
 
 const GoogleLoginButton = () => {
   const handleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
-        console.log("Token Response:", tokenResponse);
         const accessToken = tokenResponse.access_token;
-        console.log("Access Token:", accessToken);
         if (!accessToken) {
           throw new Error("No Access token found");
         }
-        // Send the ID token to the backend
-        const result = await axios.post(
-          "http://localhost:5000/google-login",
-          {
-            token: accessToken,
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-
-        console.log("Login Successful:", result.data);
+        // Send the ID token to the backend using apiService
+        const result = await apiService.googleLogin(accessToken);
         const { user } = result.data; //Get user info from the response
         if (user) {
           alert(`Welcome, ${user.name}`);

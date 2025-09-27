@@ -1,8 +1,9 @@
-import React, { use, useState } from "react";
+import React, {  useState } from "react";
 import "./Login.css";
 import GoogleLoginButton from "../../Components/GoogleLoginButton/GoogleLoginButton";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import config from "../../config";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ const Login = () => {
     console.log(formData);
     try {
       const response = await axios.post(
-        "http://localhost:5000/login",
+        `${config.apiUrl}/login`,
         formData,
         {
           headers: {

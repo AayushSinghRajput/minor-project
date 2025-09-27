@@ -1,12 +1,11 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/UserSchema");
-const sendVerificationEmail = require("../utils/sendVerificationEmail");
-const generateEmailVerificationToken = require("../utils/generateEmailVerificationToken");
+
+
 //sign-up controller
 const signController = async (req, res) => {
   const { name, email, password } = req.body;
-  console.log(req.body);
   try {
     //Check if user already exits
     const existingUser = await User.findOne({ email });
@@ -33,13 +32,6 @@ const signController = async (req, res) => {
       }
     );
     res.status(201).json({ message: "User created successfully.", token });
-    // //Generate email verification token
-    // const token = generateEmailVerificationToken(newUser._id);
-    // // Send verification email
-    // await sendVerificationEmail(newUser.email, token);
-    // return res.status(201).json({
-    //   message: "User created successfully.Please check your email to verify.",
-    // });
   } catch (error) {
     console.log("Error in signController:", error);
     return res.status(500).json({ message: "Server error", error });

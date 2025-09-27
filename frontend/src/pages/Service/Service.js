@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import axios from "axios";
+import apiService from "../../apiService";
 import "./Service.css";
 
 const Service = () => {
@@ -130,22 +130,10 @@ const Service = () => {
     setClassificationResult(null);
 
     try {
-      //new logic
-      const endpoint =
-        imageSource === "camera"
-          ? "http://localhost:5000/predict_camera"
-          : "http://localhost:5000/predict";
-      const response = await axios.post(
-        endpoint,
-        {
-          image: imageSrc, //sending base64 string
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      // Use apiService methods based on image source
+      const response = imageSource === "camera" 
+        ? await apiService.analyzeCamera({ image: imageSrc }) 
+        : await apiService.analyzeImage({ image: imageSrc });
       //Extract prediction probabilities and find the highest one
       if (
         !response.data.prediction_probabilities ||
