@@ -1,8 +1,11 @@
+const dotenv = require("dotenv");
+// Load environment variables first, before any other code runs
+dotenv.config();
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const dbConnection = require("./db/dbConnect");
-const dotenv = require("dotenv");
 const PORT = process.env.PORT || 5000;
 const {
   signRouter,
@@ -16,22 +19,38 @@ const { contactRouter } = require("./routes/contact-route");
 const { googleRouter } = require("./routes/google-route");
 const { resetRouter } = require("./routes/reset-route");
 
-// Load environment variables
-dotenv.config();
+// Environment variables already loaded at the top of the file
 
 // Set environment-specific variables
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const FRONTEND_URL = NODE_ENV === 'production' 
-  ? process.env.FRONTEND_URL || 'https://minor-project-frontend-murex.vercel.app'
-  : 'http://localhost:3000';
-const FLASK_URL = NODE_ENV === 'production'
-  ? process.env.FLASK_URL || 'https://minor-project-ml.onrender.com'
-  : 'http://localhost:8000';
 
-// Configure CORS to allow requests from the frontend
+// Allow multiple frontend URLs for flexibility
+const allowedOrigins = [
+  'http://localhost:3000',                         // Local development
+  'https://minor-project-frontend-murex.vercel.app' // Production
+];
+
+const FRONTEND_URL = process.env.FRONTEND_URL || (NODE_ENV === 'production' 
+  ? 'https://minor-project-frontend-murex.vercel.app'
+  : 'http://localhost:3000');
+
+const FLASK_URL = process.env.FLASK_URL || (NODE_ENV === 'production'
+  ? 'https://minor-project-ml.onrender.com'
+  : 'http://localhost:8000');
+
+// Configure CORS to allow requests from multiple origins
 app.use(
   cors({
-    origin: FRONTEND_URL,
+    origin: function(origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if(!origin) return callback(null, true);
+      
+      if(allowedOrigins.indexOf(origin) === -1) {
+        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
     credentials: true
   })
 );

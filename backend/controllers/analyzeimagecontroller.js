@@ -10,7 +10,6 @@ const analyzeController = async (req, res) => {
         .status(400)
         .json({ message: "No image data found in the request." });
     }
-    console.log("Received image file, converting to base64");
     // Directly use the base64 string from the frontend
     const base64Image = req.file.image;
     // const fileType = req.body.fileType; //optional
@@ -20,7 +19,6 @@ const analyzeController = async (req, res) => {
       image: base64Image,
       // fileType: fileType, //send file type if required by the ml model
     });
-    console.log("Prediction result received from Flask:", response.data);
     res.send(response.data);
   } catch (error) {
     if (error.response) {

@@ -1,9 +1,8 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import GoogleLoginButton from "../../Components/GoogleLoginButton/GoogleLoginButton";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import config from "../../config";
+import apiService from "../../apiService";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,25 +28,14 @@ const Login = () => {
   };
   const handlelogin = async (e) => {
     e.preventDefault();
-    console.log(formData);
     try {
-      const response = await axios.post(
-        `${config.apiUrl}/login`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await apiService.login(formData);
       alert(response.data.message);
-      console.log("Backend Response:", response.data);
       localStorage.setItem("token", response.data.token);
       navigate("/service");
     } catch (error) {
       if (error.response && error.response.data.message) {
         alert(error.response.data.message);
-        console.log(error);
       } else {
         alert("An unexpected error occured. Please try again.");
       }
@@ -57,15 +45,7 @@ const Login = () => {
     e.preventDefault();
     const { email, newPassword } = resetData;
     try {
-      const response = await axios.post(
-        "http://localhost:5000/reset-password",
-        { email, newPassword },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await apiService.resetPassword(email, newPassword);
       alert(response.data.message);
       setShowResetModal(false);
     } catch (error) {
@@ -138,13 +118,13 @@ const Login = () => {
             </label>
           </div>
           <div className="forget-container">
-            <a
-              href="#"
+            <button
+              type="button"
               className="forgot-password"
               onClick={() => setShowResetModal(true)}
             >
               Forgot Password?
-            </a>
+            </button>
             <p className="forget-para">
               Don't have an account?
               <a href="/signup" className="forget-sign">

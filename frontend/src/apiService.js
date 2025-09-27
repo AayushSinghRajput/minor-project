@@ -26,7 +26,7 @@ const apiService = {
   login: (credentials) => apiClient.post('/login', credentials),
   signup: (userData) => apiClient.post('/sign', userData),
   googleLogin: (token) => apiClient.post('/google-login', { token }),
-  resetPassword: (email) => apiClient.post('/reset-password', { email }),
+  resetPassword: (email,newPassword) => apiClient.post('/reset-password', { email ,newPassword }),
   
   // Analysis endpoints
   analyzeImage: (imageData) => apiClient.post('/predict', imageData),

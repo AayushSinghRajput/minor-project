@@ -22,7 +22,6 @@ const signController = async (req, res) => {
     });
     //Save the user
     await newUser.save();
-    console.log("New User:", newUser);
     // Generate JWT token
     const token = jwt.sign(
       { id: newUser._id, email: newUser.email },
@@ -41,7 +40,6 @@ const signController = async (req, res) => {
 //login controller
 const loginController = async (req, res) => {
   try {
-    console.log(req.body);
     const { email, password } = req.body;
     //Find user by email
     const user = await User.findOne({ email });
